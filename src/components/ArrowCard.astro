@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
 type Props = {
-  entry: CollectionEntry<"blog"> | CollectionEntry<"projects">;
+  entry: CollectionEntry<"projects">;
 }
 
 const { entry } = Astro.props;
@@ -14,7 +14,7 @@ const { entry } = Astro.props;
     <div class="relative w-32 h-32 overflow-hidden mr-2">
       <Image class="absolute inset-0 w-full h-full object-cover rounded-lg hover:rounded-lg"
       alt='thumbnail'
-      src={entry.data.thumbnail} />
+      src={entry.data.thumbnail!} />
     </div>
 
     <div>
