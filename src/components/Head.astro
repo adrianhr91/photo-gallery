@@ -72,6 +72,7 @@ const { title, description, image = "/nano.png" } = Astro.props;
 
 <script is:inline>
   function init() {
+    setInitialTheme();
     preloadTheme();
     onScroll();
     animate();
@@ -137,7 +138,10 @@ const { title, description, image = "/nano.png" } = Astro.props;
     });
   }
 
-function toggleTheme(dark) {
+
+
+  function toggleTheme(dark) {
+    console.log('hello');
     const css = document.createElement("style");
 
     css.appendChild(
@@ -165,6 +169,14 @@ function toggleTheme(dark) {
     document.head.removeChild(css);
   }
 
+  function setInitialTheme() {
+    const userTheme = localStorage.theme;
+
+    if(userTheme == undefined) {
+      localStorage.setItem('theme', 'dark');
+    }
+  }
+
   function preloadTheme() {
     const userTheme = localStorage.theme;
 
@@ -177,5 +189,5 @@ function toggleTheme(dark) {
 
   document.addEventListener("DOMContentLoaded", () => init());
   document.addEventListener("astro:after-swap", () => init());
-  preloadTheme();
+  // preloadTheme();
 </script>
