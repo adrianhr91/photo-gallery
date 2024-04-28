@@ -7,13 +7,4 @@ export default defineConfig({
   site: 'https://adrianhr91.github.io',
   base: 'photo-gallery',
   integrations: [mdx(), sitemap(), tailwind()],
-  image: {
-    // Example: Enable the Sharp-based image service with a custom config
-    service: {
-       entrypoint: 'astro/assets/services/sharp',
-       config: {
-         limitInputPixels: false,
-      },
-     },
-  }
 });
