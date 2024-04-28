@@ -7,11 +7,12 @@ type Props = {
 
 const { entry } = Astro.props;
 ---
-<a href={`/${entry.collection}/${entry.slug}`} class="relative group flex flex-nowrap py-2 px-2 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
+<a href={`${import.meta.env.BASE_URL}/${entry.collection}/${entry.slug}`} class="relative group flex flex-nowrap py-2 px-2 pr-10 rounded-lg border border-black/15 dark:border-white/20 hover:bg-black/5 dark:hover:bg-white/5 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
   <div class="flex items-stretch">
 
     <div class="relative w-32 h-32 overflow-hidden mr-2">
-      <img class="absolute inset-0 w-full h-full object-cover rounded-lg hover:rounded-lg" src=`${entry.data.thumbnail}` />
+      <img class="absolute inset-0 w-full h-full object-cover rounded-lg hover:rounded-lg"
+       src=`${import.meta.env.BASE_URL}/${entry.data.thumbnail}` />
     </div>
 
     <div>
