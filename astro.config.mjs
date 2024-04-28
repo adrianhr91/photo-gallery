@@ -4,7 +4,8 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
-  site: "https://astro-nano-demo.vercel.app",
+  site: 'https://adrianhr91.github.io',
+  base: 'photo-gallery',
   integrations: [mdx(), sitemap(), tailwind()],
   image: {
     // Example: Enable the Sharp-based image service with a custom config
