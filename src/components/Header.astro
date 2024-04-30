@@ -4,9 +4,8 @@ import Link from "@components/Link.astro";
 import { SITE } from "@consts";
 ---
 
-<header>
-  <Container>
-    <div class="flex flex-wrap gap-y-2 justify-between">
+<header class="">
+    <div class="flex flex-wrap gap-y-2 justify-between mx-auto max-w-screen-xl px-5">
       <Link href=`${import.meta.env.BASE_URL}` underline={false}>
         <div class="font-semibold">
           {SITE.NAME}
@@ -24,5 +23,4 @@ import { SITE } from "@consts";
         </Link>
       </nav>
     </div>
-  </Container>
 </header>
