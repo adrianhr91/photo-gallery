@@ -1,7 +1,6 @@
 ---
 import { getCollection } from "astro:content";
 import PageLayout from "@layouts/PageLayout.astro";
-import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
 import { PROJECTS } from "@consts";
 
@@ -13,19 +12,15 @@ const projects = (await getCollection("projects"))
 <PageLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
   <div class="mx-auto max-w-screen-lg px-5">
     <div class="">
-      <div class="animate font-semibold text-black dark:text-white">
+      <div class="animate mb-4 font-semibold text-black dark:text-white">
         {PROJECTS.TITLE}
       </div>
-      <div class="columns-3xs mt-4 ">
-        <div class="animate">
-          {
-            projects.map((project) => (
-              <div class="mb-4">
-                <ArrowCard entry={project}/>
-              </div>
-            ))
-          }
-        </div>
+      <div class="animate grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {
+          projects.map((project) => (
+            <ArrowCard entry={project}/>
+          ))
+        }
       </div>
     </div>
   </div>
