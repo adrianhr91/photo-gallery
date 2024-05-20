@@ -12,20 +12,20 @@ const projects = (await getCollection("projects"))
 
 <PageLayout title={PROJECTS.TITLE} description={PROJECTS.DESCRIPTION}>
   <div class="mx-auto max-w-screen-lg px-5">
-    <div class="space-y-10 ">
+    <div class="">
       <div class="animate font-semibold text-black dark:text-white">
         {PROJECTS.TITLE}
       </div>
-      <div class="columns-xs">
-        <ul class="animate flex flex-col gap-4 ">
+      <div class="columns-3xs mt-4 ">
+        <div class="animate">
           {
             projects.map((project) => (
-              <li>
+              <div class="mb-4">
                 <ArrowCard entry={project}/>
-              </li>
+              </div>
             ))
           }
-        </ul>
+        </div>
       </div>
     </div>
   </div>
